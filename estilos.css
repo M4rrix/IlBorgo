@@ -1,0 +1,156 @@
+
+
+
+:root { /*similar a la etiqueta html pero la usamos para diferenciar que en el html se ponen esilos globales y aca dentro en el root se ponen las variables de css, es un pseudonimo de la etiqueta html*/
+     /*siempre para declarar una variable se empieza con guion guion = --nombre-especificacion:*/
+    
+     /*palette*/
+        --dark-bg: #E0E7B3;
+        --light-bg: #5A6046;
+
+    
+
+    /*Typography*/
+    --basse-font: font-family: 'Inter', sans-serif; /*la de base*/
+    --alternative-font: font-family: 'Raleway', sans-serif; /*la alternativa*/
+
+    /*Font size- buena pratica usar font size con em*/
+    --font-large: 2.4em;
+    --font-mediun: 1.8em;
+    --font-small: 1.6em;
+    
+
+    /*Spacing- buena pratica usar spacing con rem*/
+    
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-8: 0.8rem;
+    
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*determina como se comportan los margenes y los rellenos en nuestro elementos */
+}
+
+html {
+    
+    font-size: 62.5%; /*de esta forma ponemos el tamaño de la fuente por defecto a 10 px*/
+    color:  var(--light-bg);
+    background-color: #F7FBD8;
+}
+
+img {
+    width: 100%; /*con esto hacemos que todas las imagenes tengan el 100% del ancho de su contenedor padre */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: var(bg);
+} 
+
+.text {
+    padding: var(--spacing-68) 0;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*creamos dos columnas con una frccion o sea de 50 y 50, para que el texto este de un lado y la iamgen del otro*/
+    align-items: center; /*para posicionar los elementos  en el centro*/ 
+    padding: var(--spacing-68) 0; /*arriba y abajo a los costados. esto seria para que las secciones no esten pegadas./ */
+    background-color: var(--light-bg);
+}
+
+.section__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8); /*separamos los tres elementos en 24px*/
+    align-items: start; /*para que los elementos ocupen su lugar*/
+    
+}
+
+.section__title {
+    font-size: var(--font-mediun);
+    font-weight: 500;
+    margin: auto;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dark-bg);
+ }
+
+ 
+.section__text {
+    font-size: var(--font-small);
+    font-weight: 300;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    color: var(--dark-bg);
+}
+
+.section__cover {
+    text-align: center;
+}
+
+.imgfrasco {
+    box-shadow: inset 0px 0px 50px var(--dark-bg);
+    border-radius: 100px;
+    width: 80%;
+}
+
+.ph {
+    font-size: var(--font-large);
+    color: var(--light-bg);
+}
+
+
+
+.section:nth-child(2) .section__cover { /*de esta forma estamos llamando al segundo hijo y dentro de ese segundo hijo llamamos a la imagen*/
+    order: -1; /*esto quiere decir que agarres la imagen y lo lleves a -1 o sea que lo inviertas y lo pongas en la primera posicion*/
+}
+
+
+
+.picture-organic {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-small);
+    padding: var(--spacing-36);
+    
+}
+ .picture-organic img {
+    width: 100px;
+}
+
+a {
+    color: var(--light-bg);
+}
+
+.fab {
+    font-size: var(--font-small);
+        
+}
+
+.footer {
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFF;
+    color: var(--light-bg);
+    text-align: center;
+    font-size: var(--font-mediun);
+    padding: var(--spacing-36) 0;
+    /*gap: 80px;*/
+}
